@@ -1,0 +1,20 @@
+.nav__container{
+
+    background-color: $bright-grey;
+    border-bottom: 1vh solid $red-orange;
+    color: $red-orange;
+
+}
+
+.nav__item{
+
+    color: $red-orange;
+    padding-right: .5rem;
+    padding-left: .5rem;
+
+}
+
+.btn-red-orange {
+    color: $red-orange;
+    border-color: $red-orange;
+}

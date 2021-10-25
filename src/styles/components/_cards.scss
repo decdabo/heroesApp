@@ -1,0 +1,29 @@
+.card{
+
+    background-color: $bright-grey;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 5%;
+
+}
+
+.btn:hover {
+    color: $bright-grey;
+    background-color: $red-orange;
+}
+
+.card__style{
+
+    width: 100%;
+
+}
+.card-img, .card-img-top {
+
+    width: 25%;
+    border-radius:0px;
+
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    width: 50%;
+
+}

@@ -1,0 +1,12 @@
+$dark-grey: #292929;
+$bright-grey: #333333;
+$red-orange: rgb(255, 65, 17);
+
+*{
+    background-color: $dark-grey;
+    color: rgb(228, 228, 228);
+} 
+
+
+@import './components/nav';
+@import './components/cards'
