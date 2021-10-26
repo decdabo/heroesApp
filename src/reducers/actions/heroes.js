@@ -1,8 +1,11 @@
 import { types } from "../types/types";
 
-export const heroesAddData = ( hero ) => ({
+export const heroesAddTeam = ( hero ) => ({
     type: types.ADD_DATA,
-    payload: {
-        data: hero
-    }
+    payload: hero,
 });
+
+export const showHeroData = ( data ) =>({
+    type: types.SHOW_HERO,
+    payload: data
+})

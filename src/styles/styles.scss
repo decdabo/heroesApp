@@ -6,6 +6,16 @@ $red-orange: rgb(255, 65, 17);
     background-color: $dark-grey;
     color: rgb(228, 228, 228);
 } 
+.btn-red-orange {
+    color: $red-orange;
+    border-color: $red-orange;
+
+    &:hover{
+        color: $bright-grey;
+        background-color: $red-orange;
+
+    }
+}
 
 
 @import './components/nav';

@@ -56,7 +56,7 @@ export const SearchScreen = () => {
                     </div>
                     {
                         (heroesList.response === 'success' && !errors.searchText) 
-                            ?(<MyCards heroes={heroesList}/>)
+                            ?(<MyCards heroes={heroesList.results}/>)
                             :(<h4 className="fs-6 text-danger">{heroesList.error}</h4>)
                     }
                 </div>

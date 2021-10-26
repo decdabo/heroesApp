@@ -11,10 +11,10 @@
     color: $red-orange;
     padding-right: .5rem;
     padding-left: .5rem;
+    &:hover{
+        color: darken($color: $red-orange, $amount: 20)
+    }
 
 }
 
-.btn-red-orange {
-    color: $red-orange;
-    border-color: $red-orange;
-}
+

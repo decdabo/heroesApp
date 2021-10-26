@@ -1,16 +1,21 @@
 import { types } from "./types/types";
 
-const initialState = { heroesId: [69, 69, 69, 69, 69, 69], heroesData:[] }
+const initialState = { teamHero: [], showHero:{} }
 
-export const heroesListReducer = ( state = initialState , { payload, type } ) =>{
+export const heroesListReducer = ( state = initialState , { type, payload } ) =>{
     switch (type) {
         case types.ADD_DATA:
             return {
                 ...state,
-                heroesData: [ payload.data ] 
+                teamHero: [...state.teamHero, payload],
             }
         case types.REMOVE:
             return {}
+        case types.SHOW_HERO:
+            return{
+                ...state,
+                showHero: payload
+            }
         default:
             return state;
     }

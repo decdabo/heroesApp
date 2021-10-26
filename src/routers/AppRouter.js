@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 
 import { LoginScreen } from "../components/auth/LoginScreen";
-import { DashboardApp } from "../components/home/DashboardApp";
+import { DashboardApp } from "./DashboardApp";
 
 export const AppRouter = () => {
     return (
         <Router>
-            <div className="body">
+            <div>
                 <Switch>
                     <Route exact path="/" component={DashboardApp} />
                     <Route exact path="/auth" component={LoginScreen} />
