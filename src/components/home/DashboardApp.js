@@ -1,7 +1,7 @@
 import React from "react";
 
 import { NavApp } from '../ui/NavApp';
-import { MyCards } from '../cards/MyCards';
+// import { MyCards } from '../cards/MyCards';
 import { SearchScreen } from "../ui/SearchScreen";
 
 export const DashboardApp = () => {

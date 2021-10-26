@@ -7,4 +7,3 @@ ReactDOM.render(
   <HeroesApp /> ,
   document.getElementById('root')
 );
-
