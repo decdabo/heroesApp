@@ -9,8 +9,6 @@ import {
 import { HeroScreen } from "../components/cards/HeroScreen";
 import { HomeScreen } from "../components/home/HomeScreen";
 
-
-
 export const DashboardApp = () => {
 
     return (

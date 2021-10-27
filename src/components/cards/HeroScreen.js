@@ -62,7 +62,7 @@ export const HeroScreen = () => {
                                      className="btn btn-outline-success"
                                      onClick={ handleAddHero }
                                     > 
-                                        Add hero 
+                                        Add
                                     </div>
                                 </div>
                             </div>

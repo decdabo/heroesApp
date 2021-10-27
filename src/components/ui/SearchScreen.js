@@ -5,12 +5,11 @@ import { MyCards } from '../cards/MyCards';
 
 
 export const SearchScreen = () => {
-    const [heroesList, setHeroesList] = useState([])
+    const [heroesList, setHeroesList] = useState([]);
  
     const handleInputChange = (e, handleChange, values) =>{
         handleChange(e);
         const { value } = values;
-
         const searchName = value.toLowerCase()
 
         try {
@@ -56,7 +55,10 @@ export const SearchScreen = () => {
                     </div>
                     {
                         (heroesList.response === 'success' && !errors.searchText) 
-                            ?(<MyCards heroes={heroesList.results}/>)
+                            ?(<MyCards 
+                                heroes={ heroesList.results }
+                                conditional={ true }
+                                />)
                             :(<h4 className="fs-6 text-danger">{heroesList.error}</h4>)
                     }
                 </div>

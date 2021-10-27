@@ -9,3 +9,8 @@ export const showHeroData = ( data ) =>({
     type: types.SHOW_HERO,
     payload: data
 })
+
+export const removeHeroData = ( data ) =>({
+    type: types.REMOVE,
+    payload: data
+})
