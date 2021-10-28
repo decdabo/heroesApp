@@ -3,6 +3,6 @@ export const types = {
     LOG_OUT: '[Auth] Logout',
     ADD_DATA: '[Heroes] Add Data',
     SHOW_HERO: '[Heroes] Show Hero',
-    ADD_ERROR: '[Heroes] Add Error',
+    ADD_HERO_ERROR: '[Heroes] Add Error',
     REMOVE: '[Heroes] Remove',
 }

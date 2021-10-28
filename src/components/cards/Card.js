@@ -1,10 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { heroesAddTeam, removeHeroData, showHeroData } from '../../reducers/actions/heroes';
+import {  heroesAddTeam, removeHeroData, showHeroData } from '../../reducers/actions/heroes';
 
 export const Card = ({ data, conditional }) => {
+    const team = useSelector(state => state.heroes.teamHero);
     const dispatch = useDispatch();
     const {  name, image } = data;
 
@@ -12,7 +13,7 @@ export const Card = ({ data, conditional }) => {
        dispatch(showHeroData(data));
     }
     const handleAddHero = () => {
-        dispatch(heroesAddTeam(data));
+        dispatch(heroesAddTeam(data, team))
     }
 
     const handleRemoveHero = () => {
@@ -35,8 +36,8 @@ export const Card = ({ data, conditional }) => {
                             </Link>
                             {
                              (conditional)
-                                ? (<div className="btn btn-outline-success m-auto" onClick={ handleAddHero }>Add</div>)
-                                : (<div className="btn btn-outline-danger m-auto" onClick={ handleRemoveHero }> Remove</div>)
+                                ? (<button className="btn btn-outline-success m-auto" onClick={ handleAddHero }>Add</button>)
+                                : (<button className="btn btn-outline-danger m-auto" onClick={ handleRemoveHero }> Remove</button>)
                             }
                         </div>
                     </div>

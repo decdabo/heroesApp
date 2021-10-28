@@ -13,7 +13,7 @@ export const DashboardApp = () => {
 
     return (
         <Router>
-            <div>
+            <div className="screen darkGrey">
                 <Switch>
                     <Route exact path="/home" component={HomeScreen} />
                     <Route exact path="/hero/:heroName" component={HeroScreen} />

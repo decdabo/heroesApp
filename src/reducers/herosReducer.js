@@ -22,6 +22,10 @@ export const heroesListReducer = ( state = initialState , { type, payload } ) =>
                 ...state,
                 showHero: payload
             }
+        case types.ADD_HERO_ERROR:
+            return {
+                ...state
+            }
         default:
             return state;
     }

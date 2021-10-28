@@ -14,7 +14,7 @@ export const AppRouter = () => {
     const { logged } = useSelector(state => state.auth)
     return (
         <Router>
-            <div>
+            <div className="body">
                 <Switch>
                     <PublicRoute path="/auth" component={LoginScreen} isAuth={ logged }/>
                     <PrivateRoute path="/" component={DashboardApp} isAuth={ logged } />

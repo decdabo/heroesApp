@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import Swal from 'sweetalert2';
 
 import { heroesAddTeam } from '../../reducers/actions/heroes';
 import { NavApp } from '../ui/NavApp';
 
 export const HeroScreen = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const { goBack } = useHistory();
-    
+
+    const team = useSelector(state => state.heroes.teamHero);
     const state = useSelector(state => state.heroes.showHero);
     const { appearance, biography, name, work, image }=state;
 
@@ -20,7 +21,17 @@ export const HeroScreen = () => {
     const hairHero = appearance['hair-color'];
 
     const handleAddHero = () => {
-        dispatch(heroesAddTeam(state))
+        const [ hero ] = team.filter(hero =>{return hero === state})
+        if(hero === state){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "Can't have the same hero twice!",
+              })
+        }else{
+            dispatch(heroesAddTeam(state));
+            goBack();
+        }
     }
     return (
         <>
@@ -56,13 +67,13 @@ export const HeroScreen = () => {
                                      > 
                                         Back 
                                     </Link>
-                                    <Link 
+                                    <button 
                                      className="btn btn-outline-success"
                                      onClick={ handleAddHero }
-                                     to="/home"
+                                     
                                     > 
                                         Add
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>

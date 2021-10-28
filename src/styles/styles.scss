@@ -3,9 +3,10 @@ $bright-grey: #333333;
 $red-orange: rgb(255, 65, 17);
 
 *{
-    background-color: $dark-grey;
     color: rgb(228, 228, 228);
+    background-color: $dark-grey;
 } 
+
 
 .brightGrey{
     background-color: $bright-grey;
@@ -25,6 +26,20 @@ $red-orange: rgb(255, 65, 17);
 
     }
 }
+.swal2-container{
+    *{
+        color: #fff;
+        background-color: $dark-grey;
+    }
+    .swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{
+        background-color: rgba(255, 255, 255, 0)
+    }
+    .swal2-styled.swal2-confirm{
+        color: $dark-grey;
+        background-color: $red-orange
+    }
+}
+
 
 
 @import './components/nav';
