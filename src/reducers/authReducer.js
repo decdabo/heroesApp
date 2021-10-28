@@ -1,14 +1,22 @@
 import { types } from "./types/types";
 
-export const authReducer = (state = { }, action = {type: types.logout} ) =>{
-    switch (action.type) {
-        case types.login:
+const theState = () => {
+    if(JSON.parse(localStorage.getItem("token"))){
+        return { logged: true}
+    }else{
+        return { logged: false }
+    }
+}
+
+const initialState = theState()
+
+export const authReducer = (state = initialState, { type, payload } ) =>{
+    switch (type) {
+        case types.LOG_IN:
             return {
-                ...state,
-                email: action.payload.email,
-                password: action.payload.password,
+                logged: payload
             }
-        case types.logout:
+        case types.LOG_OUT:
             return {}
         default:
             return state;

@@ -6,6 +6,15 @@ $red-orange: rgb(255, 65, 17);
     background-color: $dark-grey;
     color: rgb(228, 228, 228);
 } 
+
+.brigthGrey{
+    background-color: $bright-grey;
+}
+
+.text-orange{
+    color: $red-orange;
+}
+
 .btn-red-orange {
     color: $red-orange;
     border-color: $red-orange;
@@ -19,4 +28,5 @@ $red-orange: rgb(255, 65, 17);
 
 
 @import './components/nav';
-@import './components/cards'
+@import './components/cards';
+@import './components/auth';

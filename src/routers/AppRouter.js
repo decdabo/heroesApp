@@ -1,22 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
 } from "react-router-dom";
 
 import { LoginScreen } from "../components/auth/LoginScreen";
 import { DashboardApp } from "./DashboardApp";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
+    const { logged } = useSelector(state => state.auth)
     return (
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={DashboardApp} />
-                    <Route exact path="/auth" component={LoginScreen} />
-                    <Redirect to="/" component={DashboardApp} />
+                    <PublicRoute path="/auth" component={LoginScreen} isAuth={ logged }/>
+                    <PrivateRoute path="/" component={DashboardApp} isAuth={ logged } />
                 </Switch>
             </div>
         </Router>

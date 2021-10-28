@@ -11,7 +11,7 @@ export const heroesListReducer = ( state = initialState , { type, payload } ) =>
             }
         case types.REMOVE:{
             const { teamHero } = state;
-            const filteredHeroes = teamHero.filter( hero =>{return hero != payload})
+            const filteredHeroes = teamHero.filter( hero =>{return hero !== payload})
                 return {
                     ...state,
                     teamHero: [...filteredHeroes]

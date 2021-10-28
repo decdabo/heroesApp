@@ -1,0 +1,24 @@
+.auth{
+    height: 100vh;
+    width: 100vw;
+}
+
+.form-control {
+    border-color: darken($color: $red-orange, $amount: 30);
+    box-shadow: none;
+    &:focus{
+        border-color: $red-orange;
+        box-shadow: none;
+    }
+}
+
+.button__container{
+
+    height: 25%;
+
+}
+
+.from__container{
+
+    padding: 3%;
+}
