@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
@@ -18,9 +19,6 @@ export const HeroScreen = () => {
     const eyesHero = appearance['eye-color'];
     const hairHero = appearance['hair-color'];
 
-    const handleBack = () =>{
-        goBack();
-    }
     const handleAddHero = () => {
         dispatch(heroesAddTeam(state))
     }
@@ -44,26 +42,27 @@ export const HeroScreen = () => {
                                         }
                                     </p>
                                 </div>
-                                <ul className="list-group list-group-flush brigthGrey">
-                                    <li className="list-group-item brigthGrey text-light">Weight: {weightHero}</li>
-                                    <li className="list-group-item brigthGrey text-light">Height: {heightHero}</li>
-                                    <li className="list-group-item brigthGrey text-light">Eyes color: {eyesHero}</li>
-                                    <li className="list-group-item brigthGrey text-light">Hair color: { hairHero }</li>
-                                    <li className="list-group-item brigthGrey text-light">Localization: "{ work.base }"</li>
+                                <ul className="list-group list-group-flush brightGrey">
+                                    <li className="list-group-item brightGrey text-light">Weight: {weightHero}</li>
+                                    <li className="list-group-item brightGrey text-light">Height: {heightHero}</li>
+                                    <li className="list-group-item brightGrey text-light">Eyes color: {eyesHero}</li>
+                                    <li className="list-group-item brightGrey text-light">Hair color: { hairHero }</li>
+                                    <li className="list-group-item brightGrey text-light">Localization: "{ work.base }"</li>
                                 </ul>
                                 <div className="card-body d-flex justify-content-between">
-                                    <div 
+                                    <Link
                                      className="btn btn-red-orange"
-                                     onClick={ handleBack }
+                                     to="/home"
                                      > 
                                         Back 
-                                    </div>
-                                    <div 
+                                    </Link>
+                                    <Link 
                                      className="btn btn-outline-success"
                                      onClick={ handleAddHero }
+                                     to="/home"
                                     > 
                                         Add
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

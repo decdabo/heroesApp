@@ -25,9 +25,9 @@ export const Card = ({ data, conditional }) => {
                     <img src={ image.url } className="card-img-top m-auto mt-3" alt={ name } />
                     <div className="card-body">
                         <h5 className="card-title mb-3">{ name }</h5>
-                        <div className="card-body d-flex justify-content-between">
+                        <div className="card-body row">
                             <Link 
-                             className="btn btn-red-orange"
+                             className="btn btn-red-orange m-auto"
                              onClick={ handleDispatch }
                              to={`./hero/${name}`}
                             >
@@ -35,8 +35,8 @@ export const Card = ({ data, conditional }) => {
                             </Link>
                             {
                              (conditional)
-                                ? (<div className="btn btn-outline-success" onClick={ handleAddHero }>Add</div>)
-                                : (<div className="btn btn-outline-danger" onClick={ handleRemoveHero }> Remove</div>)
+                                ? (<div className="btn btn-outline-success m-auto" onClick={ handleAddHero }>Add</div>)
+                                : (<div className="btn btn-outline-danger m-auto" onClick={ handleRemoveHero }> Remove</div>)
                             }
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik } from 'formik';
 
@@ -7,8 +7,28 @@ import { login } from '../../reducers/actions/auth';
 import { useDispatch } from 'react-redux';
 
 export const LoginScreen = () => {
+    const [error, setError] = useState(false)
     const dispatch = useDispatch()
     const { push } = useHistory()
+
+    const handleValues = ( values )=>{
+        let error = {}
+        if(!values.email){
+            error.email = 'Please complete the space';
+        }else if(values.email.length < 2){
+            error.email = 'Email too short';
+        }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(values.email)){
+            error.email = "The email can't contains spaces and simbols";
+        }
+        if(!values.password){
+            error.password = 'Please complete the space';
+        }else if(values.password.length < 1){
+            error.password = 'password too short';
+        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.password)){
+            error.password = "The password can't contains simbols and numbers";
+        }
+        return error;
+    }
 
     return (
         <Formik
@@ -17,41 +37,40 @@ export const LoginScreen = () => {
                 password: '',
             }}
             onSubmit={(values)=>{
-                try {
-                    axios.post('http://challenge-react.alkemy.org/', values)
-                        .then(res=>{ 
-                            dispatch(login(res.data))
-                            push('/home');
-                        })
-                        .catch(e=>console.log('bad'));
-                } catch (error) {
-                    console.log(error);
-                }
+                axios.post('http://challenge-react.alkemy.org/', values)
+                    .then(res=>{ 
+                        dispatch(login(res.data))
+                        push('/home');
+                    })
+                    .catch(e=>{setError(true)});
             }}
+            validate={handleValues}
         >
-            {({ values, handleChange, handleBlur, handleSubmit })=>(
+            {({ values, handleChange, handleBlur, handleSubmit, errors, touched })=>(
                 <form className="auth d-flex justify-content-center align-items-center" onSubmit={ handleSubmit }>
-                    <div className="container w-50 h-50 rounded-3 brigthGrey from__container">
+                    <div className="container w-50 rounded-3 brightGrey from__container">
                         <div className="mb-3 row">
-                            <label htmlFor="staticEmail" className="col-12 col-form-label text-orange brigthGrey">Email</label>
-                            <div className="col-12 brigthGrey">
+                            <label htmlFor="staticEmail" className="col-12 col-form-label text-orange brightGrey">Email*</label>
+                            <div className="col-12 brightGrey">
                                 <input 
                                  autoComplete="off"
-                                 className="form-control bg-dark text-light mb-3 brigthGrey"
+                                 className="form-control bg-dark text-light mb-3 brightGrey"
                                  id="staticEmail"
                                  name="email"
                                  value={ values.email }
                                  type="text" 
                                  placeholder="email@email.com"
+                                 onBlur={ handleBlur }
                                  onChange={ handleChange }
                                 />
+                                {touched.email && errors.email && <h1 className="fs-6 text-danger brightGrey">{errors.email}</h1>}
                             </div>
                         </div>
                         <div className="mb-3 row">
                             <label 
                             htmlFor="inputPassword" 
-                            className="col-12 col-form-label text-orange brigthGrey">Password</label>
-                            <div className="col-12 brigthGrey">
+                            className="col-12 col-form-label text-orange brightGrey">Password*</label>
+                            <div className="col-12 brightGrey">
                                 <input 
                                  autoComplete="off"
                                  className="form-control bg-dark text-light mb-3" 
@@ -60,11 +79,14 @@ export const LoginScreen = () => {
                                  value={ values.password }
                                  type="password" 
                                  placeholder="password"
+                                 onBlur={ handleBlur }
                                  onChange={ handleChange }
                                 />
+                                {touched.password && errors.password && <h1 className="fs-6 text-danger brightGrey">{errors.password}</h1>}
+                                {error && <h1 className="fs-6 text-danger brightGrey">Password or email wrong</h1>}
                             </div>
                         </div>
-                        <div className="row button__container brigthGrey">
+                        <div className="row button__container brightGrey">
                             <button className="btn btn-red-orange col-6 m-auto" type="submit">
                                 Login
                             </button>

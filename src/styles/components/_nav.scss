@@ -8,11 +8,12 @@
 
 .nav__item{
 
-    color: $red-orange;
+    color: white;
     padding-right: .5rem;
     padding-left: .5rem;
+    transition: all .3s;
     &:hover{
-        color: darken($color: $red-orange, $amount: 20)
+        color: $red-orange
     }
 
 }
