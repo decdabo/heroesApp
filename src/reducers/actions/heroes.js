@@ -12,18 +12,18 @@ export const heroesAddTeam = ( heroe, team) => {
             text: 'You already have this character',
         })
         return { type: types.ADD_HERO_ERROR }
-    }else if( align.length === 3 ) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'you already have 3 characters with this align',
-        })
-        return { type: types.ADD_HERO_ERROR }
     }else if( team.length === 6 ){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'You already have 6 characters',
+        })
+        return { type: types.ADD_HERO_ERROR }
+    }else if( align.length === 3 ) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'you already have 3 characters with this align',
         })
         return { type: types.ADD_HERO_ERROR }
     }else{

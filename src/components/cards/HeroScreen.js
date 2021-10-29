@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
 
 import { heroesAddTeam } from '../../reducers/actions/heroes';
 import { NavApp } from '../ui/NavApp';
 
 export const HeroScreen = () => {
     const dispatch = useDispatch();
-    const { goBack } = useHistory();
 
     const team = useSelector(state => state.heroes.teamHero);
     const state = useSelector(state => state.heroes.showHero);
@@ -21,17 +19,7 @@ export const HeroScreen = () => {
     const hairHero = appearance['hair-color'];
 
     const handleAddHero = () => {
-        const [ hero ] = team.filter(hero =>{return hero === state})
-        if(hero === state){
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: "Can't have the same hero twice!",
-              })
-        }else{
-            dispatch(heroesAddTeam(state));
-            goBack();
-        }
+        dispatch(heroesAddTeam(state, team))
     }
     return (
         <>
@@ -67,13 +55,13 @@ export const HeroScreen = () => {
                                      > 
                                         Back 
                                     </Link>
-                                    <button 
+                                    <Link 
                                      className="btn btn-outline-success"
                                      onClick={ handleAddHero }
-                                     
+                                     to="/home"
                                     > 
                                         Add
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
