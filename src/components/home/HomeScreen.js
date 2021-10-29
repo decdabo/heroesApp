@@ -7,7 +7,7 @@ import { TeamApp } from "./TeamApp";
 
 export const HomeScreen = () => {
     const { teamHero } = useSelector(state => state.heroes)
-
+    
     return (
         <>
             <NavApp />
