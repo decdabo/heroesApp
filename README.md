@@ -2,5 +2,4 @@
 
 
 ## AUTH:
-user: challenge@alkemy.org
-password: react
+user: challenge@alkemy.org // password: react
