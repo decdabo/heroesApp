@@ -24,3 +24,29 @@
     padding: 3%;
 
 }
+
+.accordion-button{
+
+    cursor: pointer;
+    color: $red-orange;
+    background-color: $dark-grey;
+
+}
+
+.accordion-button:not(.collapsed){
+    color: $red-orange;
+    background-color: $dark-grey;
+    box-shadow: none;
+}
+
+.accordion-item{
+    border: none;
+}
+
+.help-transition{
+    transition: all .3s;
+}
+
+.help-text{
+    color: lighten($color: $bright-grey, $amount: 30);
+}

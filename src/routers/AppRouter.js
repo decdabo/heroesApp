@@ -13,7 +13,7 @@ import { PublicRoute } from "./PublicRoute";
 export const AppRouter = () => {
     const { logged } = useSelector(state => state.auth)
     return (
-        <Router>
+        <Router basename="/heroapp">
             <div className="body">
                 <Switch>
                     <PublicRoute path="/auth" component={LoginScreen} isAuth={ logged }/>

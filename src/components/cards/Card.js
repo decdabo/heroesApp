@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {  heroesAddTeam, removeHeroData, showHeroData } from '../../reducers/actions/heroes';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const Card = ({ data, conditional }) => {
+    const [size, setSize] = useState(6)
     const team = useSelector(state => state.heroes.teamHero);
     const dispatch = useDispatch();
     const {  name, image } = data;
@@ -15,12 +18,23 @@ export const Card = ({ data, conditional }) => {
     const handleAddHero = () => {
         dispatch(heroesAddTeam(data, team))
     }
-
     const handleRemoveHero = () => {
         dispatch(removeHeroData(data))
     }
+
+    useEffect(() => {
+        if(team.length <= 2){
+            setSize(6)
+        }else if(team.length <= 3){
+            setSize(4)
+        }else{
+            setSize(2);
+            console.log(size)
+        }
+    }, [team])
+
     return (
-        <div className="col-6 col-lg-2 pb-4 m-auto">
+        <div className={`col-12 col-xl-${size} pb-4 m-auto`}>
             <div className="card__style m-auto">
                 <div className="card w-100" style={{width: "100%"}}>
                     <img src={ image.url } className="card-img-top m-auto mt-3" alt={ name } />

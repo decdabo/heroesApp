@@ -30,7 +30,7 @@ export const LoginScreen = () => {
         return error;
     }
 
-    return (
+        return (
         <Formik
             initialValues={{
                 email: '',
@@ -47,7 +47,7 @@ export const LoginScreen = () => {
             validate={handleValues}
         >
             {({ values, handleChange, handleBlur, handleSubmit, errors, touched })=>(
-                <form className="auth d-flex justify-content-center align-items-center" onSubmit={ handleSubmit }>
+                <form className="auth d-flex flex-column justify-content-center align-items-center" onSubmit={ handleSubmit }>
                     <div className="container w-50 rounded-3 brightGrey from__container">
                         <div className="mb-3 row">
                             <label htmlFor="staticEmail" className="col-12 col-form-label text-orange brightGrey">Email*</label>
@@ -86,10 +86,25 @@ export const LoginScreen = () => {
                                 {error && <h1 className="fs-6 text-danger brightGrey">Password or email wrong</h1>}
                             </div>
                         </div>
-                        <div className="row button__container brightGrey">
-                            <button className="btn btn-red-orange col-6 m-auto" type="submit">
+                        <div className="row button__container brightGrey p-5">
+                            <button className="btn btn-red-orange col-12 m-auto w-50" type="submit">
                                 Login
                             </button>
+                        </div>
+                    </div>
+                    <div class="accordion mt-4" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                            <div className="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Want to met inside? Click me!
+                            </div>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h1 className="fs-6 help-text">USER: challenge@alkemy.org</h1>
+                                <h1 className="fs-6 help-text">PASSWORD: react</h1>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </form>
