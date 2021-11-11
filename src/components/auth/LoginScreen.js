@@ -37,7 +37,7 @@ export const LoginScreen = () => {
                 password: '',
             }}
             onSubmit={(values)=>{
-                axios.post('http://challenge-react.alkemy.org/', values)
+                axios.post('http://challenge-react.alkemy.org', values)
                     .then(res=>{ 
                         dispatch(login(res.data))
                         push('/home');
@@ -108,6 +108,7 @@ export const LoginScreen = () => {
                         </div>
                     </div>
                 </form>
-        )}</Formik>
+            )}
+        </Formik>
     );
 }
