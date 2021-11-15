@@ -10,5 +10,5 @@ export const HeroesApp = () => {
         <Provider store={ store } >
             <AppRouter />
         </Provider>
-    )
+    );
 }

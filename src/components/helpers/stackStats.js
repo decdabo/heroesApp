@@ -19,6 +19,6 @@ export const stackStats = ( teamHero ) =>{
         { type: "Strength", value: strength },
     ]
 
-    return stackStats;
+    return stackStats
 
 }
