@@ -42,7 +42,7 @@ export const LoginScreen = () => {
                         dispatch(login(res.data))
                         push('/home');
                     })
-                    .catch(e=>{setError(true)});
+                    .catch(e=>{console.log(e), setError(true)});
             }}
             validate={handleValues}
         >
