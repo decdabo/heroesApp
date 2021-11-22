@@ -37,12 +37,12 @@ export const LoginScreen = () => {
                 password: '',
             }}
             onSubmit={(values)=>{
-                axios.post('http://challenge-react.alkemy.org', values)
+                axios.post('https://heroes-alkemy.herokuapp.com/api/login', values)
                     .then(res=>{ 
-                        dispatch(login(res.data))
+                        dispatch(login(res.data));
                         push('/home');
                     })
-                    .catch(e=>{console.log(e), setError(true)});
+                    .catch(e=>{ setError(true) });
             }}
             validate={handleValues}
         >
@@ -92,15 +92,15 @@ export const LoginScreen = () => {
                             </button>
                         </div>
                     </div>
-                    <div class="accordion mt-4" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                    <div className="accordion mt-4" id="accordionExample">
+                        <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingOne">
                             <div className="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Want to met inside? Click me!
                             </div>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                            <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
                                 <h1 className="fs-6 help-text">USER: challenge@alkemy.org</h1>
                                 <h1 className="fs-6 help-text">PASSWORD: react</h1>
                             </div>

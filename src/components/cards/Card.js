@@ -31,6 +31,7 @@ export const Card = ({ data, conditional }) => {
             setSize(2);
             console.log(size)
         }
+        // eslint-disable-next-line
     }, [team])
 
     return (
