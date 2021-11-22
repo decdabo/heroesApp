@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/heroesapp/static/css/main.99ac000a.chunk.css",
-    "main.js": "/heroesapp/static/js/main.95496d6f.chunk.js",
-    "main.js.map": "/heroesapp/static/js/main.95496d6f.chunk.js.map",
+    "main.js": "/heroesapp/static/js/main.b57f9667.chunk.js",
+    "main.js.map": "/heroesapp/static/js/main.b57f9667.chunk.js.map",
     "runtime-main.js": "/heroesapp/static/js/runtime-main.ec56482d.js",
     "runtime-main.js.map": "/heroesapp/static/js/runtime-main.ec56482d.js.map",
-    "static/js/2.ec0dbacf.chunk.js": "/heroesapp/static/js/2.ec0dbacf.chunk.js",
-    "static/js/2.ec0dbacf.chunk.js.map": "/heroesapp/static/js/2.ec0dbacf.chunk.js.map",
+    "static/js/2.e60d8915.chunk.js": "/heroesapp/static/js/2.e60d8915.chunk.js",
+    "static/js/2.e60d8915.chunk.js.map": "/heroesapp/static/js/2.e60d8915.chunk.js.map",
     "index.html": "/heroesapp/index.html",
     "static/css/main.99ac000a.chunk.css.map": "/heroesapp/static/css/main.99ac000a.chunk.css.map",
-    "static/js/2.ec0dbacf.chunk.js.LICENSE.txt": "/heroesapp/static/js/2.ec0dbacf.chunk.js.LICENSE.txt"
+    "static/js/2.e60d8915.chunk.js.LICENSE.txt": "/heroesapp/static/js/2.e60d8915.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ec56482d.js",
-    "static/js/2.ec0dbacf.chunk.js",
+    "static/js/2.e60d8915.chunk.js",
     "static/css/main.99ac000a.chunk.css",
-    "static/js/main.95496d6f.chunk.js"
+    "static/js/main.b57f9667.chunk.js"
   ]
 }
