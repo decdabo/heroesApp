@@ -30,7 +30,7 @@ export const TeamApp = () => {
                 </div>
             </div>
             <hr/>
-            <MyCards heroes={ teamHero } conditional={ false } />
+            <MyCards heroes={ teamHero } conditional={ false } lengthTeam={teamHero.length} />
         </div>
     );
 }

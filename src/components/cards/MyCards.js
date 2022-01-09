@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Card } from './Card';
 
-export const MyCards = ({ heroes, conditional }) => {
+export const MyCards = ({ heroes, conditional, lengthTeam = 6 }) => {
     return (
         <>
             <div className="row w-100 p-4 m-auto">
@@ -12,6 +12,7 @@ export const MyCards = ({ heroes, conditional }) => {
                              key={`${hero}${index}`} 
                              data={ hero } 
                              conditional={ conditional }
+                             numberTeam={lengthTeam}
                             />
                  })
                 }

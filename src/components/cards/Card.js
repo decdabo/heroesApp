@@ -6,7 +6,7 @@ import {  heroesAddTeam, removeHeroData, showHeroData } from '../../reducers/act
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-export const Card = ({ data, conditional }) => {
+export const Card = ({ data, conditional, numberTeam }) => {
     const [size, setSize] = useState(6)
     const team = useSelector(state => state.heroes.teamHero);
     const dispatch = useDispatch();
@@ -23,16 +23,15 @@ export const Card = ({ data, conditional }) => {
     }
 
     useEffect(() => {
-        if(team.length <= 2){
+        if(numberTeam <= 2){
             setSize(6)
-        }else if(team.length <= 3){
+        }else if(numberTeam <= 3){
             setSize(4)
         }else{
             setSize(2);
-            console.log(size)
         }
         // eslint-disable-next-line
-    }, [team])
+    }, [numberTeam])
 
     return (
         <div className={`col-12 col-xl-${size} pb-4 m-auto`}>
