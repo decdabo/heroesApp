@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "https://heroes-alkemy.herokuapp.com/api/"
+const baseUrl = process.env.REACT_APP_LOGIN
 
 export const authRequest = async(method, values) =>{
     try {
